@@ -18,3 +18,23 @@
                                       |_|            |___/         
 
 ```                                                                                                                                                           
+
+## usage
+```groovy
+plugins {
+    id 'io.github.sabujak-sabujak'
+}
+
+githubRelease {
+    token = "your token"
+    owner = "owner"
+    repo = "repo nam"
+    tagName = "x.x.x"
+    targetCommitish = "branch name"
+    name = "Release name"
+    body = "Release body"
+    prerelease = false
+    discussionCategoryName = ""
+    generateReleaseNotes = false
+}
+```
