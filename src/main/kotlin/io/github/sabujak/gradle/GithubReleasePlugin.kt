@@ -6,6 +6,6 @@ import org.gradle.api.Project
 class GithubReleasePlugin : Plugin<Project> {
     override fun apply(target: Project): Unit = target.run {
         extensions.create("githubRelease", GithubReleasePluginExtension::class.java)
-        tasks.register("postGithubRelease", ReleaseTask::class.java)
+        tasks.register("createGithubRelease", ReleaseTask::class.java)
     }
 }
