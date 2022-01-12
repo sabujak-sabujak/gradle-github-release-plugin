@@ -19,12 +19,60 @@
 
 ```                                                                                                                                                           
 
+[![Gradle Plugin Portal](https://img.shields.io/maven-metadata/v/https/plugins.gradle.org/m2/io/github/sabujak-sabujak/io.github.sabujak-sabujak.gradle.plugin/maven-metadata.xml.svg?colorB=007ec6&label=gradle)](https://plugins.gradle.org/plugin//io.github.sabujak-sabujak)
+
 ## usage
-```groovy
+<details open><summary>Kotlin</summary>
+  
+```kotlin
+Using the plugins DSL:
 plugins {
-    id 'io.github.sabujak-sabujak'
+  id("io.github.sabujak-sabujak") version "x.x.x"
 }
 
+buildscript {
+  repositories {
+    maven {
+      url = uri("https://plugins.gradle.org/m2/")
+    }
+  }
+  dependencies {
+    classpath("io.github.sabujak-sabujak:gradle-github-release-plugin:x.x.x")
+  }
+}
+
+apply(plugin = "io.github.sabujak-sabujak")
+```
+ 
+</details>
+
+<details><summary>Groovy</summary>
+  
+```groovy
+Using the plugins DSL:
+plugins {
+  id "io.github.sabujak-sabujak" version "x.x.x"
+}
+
+Using legacy plugin application:
+buildscript {
+  repositories {
+    maven {
+      url "https://plugins.gradle.org/m2/"
+    }
+  }
+  dependencies {
+    classpath "io.github.sabujak-sabujak:gradle-github-release-plugin:x.x.x"
+  }
+}
+
+apply plugin: "io.github.sabujak-sabujak"
+```
+ </details>
+
+### Use Plugin
+
+```groovy
 githubRelease {
     token = "your token"
     owner = "owner"
@@ -38,3 +86,5 @@ githubRelease {
     generateReleaseNotes = false
 }
 ```
+
+
